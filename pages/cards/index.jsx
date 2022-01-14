@@ -4,7 +4,7 @@ import MenuBar from "../../components/molecules/menu-bar/MenuBar";
 import styles from "./styles.module.css";
 
 const index = () => {
-  const imageList = ['/assets/images/card-cover2.png', '/assets/images/card-cover2.png', '/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png','/assets/images/card-cover2.png']
+  const imageList = ["/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png","/assets/images/card-cover2.png" ]
   return (
     <div className={`${styles.pageBg}`}>
       <MenuBar />
