@@ -1,7 +1,8 @@
 import React from "react";
-import ListCard from "../../components/atoms/list-card/ListCard";
+import ListCard from "../../components/organisms/list-card/ListCard";
 import MenuBar from "../../components/molecules/menu-bar/MenuBar";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const index = () => {
   const imageList = ["/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png", "/assets/images/card-cover2.png","/assets/images/card-cover2.png" ]
@@ -13,9 +14,11 @@ const index = () => {
           Valentine's Day Cards
         </h1>
       </div>
-      <div className="grid-cols-2 grid justify-center">
-        {imageList.map((item, index )=> <ListCard imgSource={item} key={`${item}---${index}`}/>)}
-      </div>
+      <Link href="/card-editor">
+        <div className="grid-cols-2 grid justify-center">
+          {imageList.map((item, index )=> <ListCard imgSource={item} key={`${item}---${index}`}/>)}
+        </div>
+      </Link>
     </div>
   );
 };
