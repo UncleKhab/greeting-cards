@@ -1,0 +1,8 @@
+.card {
+    height: 55%;
+    width: 65%;
+}
+
+.firstInside {
+    backface-visibility: hidden;
+}
