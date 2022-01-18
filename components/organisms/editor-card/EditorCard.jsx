@@ -1,52 +1,58 @@
-import React, { useState } from 'react'
-import styles from './EditorCard.module.css'
-import {motion} from 'framer-motion'
-const variantsCover = {
-    open: {
-        rotateY: -180,
-    },
-    closed: {
-        rotateY: 0
-    }
-}
+import React, { useState } from "react";
+import styles from "./EditorCard.module.css";
+import { motion, useCycle } from "framer-motion";
 
-const variantsFirstInside = {
-    open: {
-        rotateY: 0,
-    },
-    closed: {
-        rotateY: 180,
+const scaleVariants = {
+  front: { x: 0 },
+  open: { x: "35%", scale: 0.7 },
+  back: { x: "100%" },
+};
+const Page = ({ setCounter }) => {
+  const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
+  const onTap = () => {
+    cycleFlipAngle();
+    console.log(flipAngle);
+    switch (flipAngle) {
+      case "0":
+        setCounter((prevCount) => (prevCount += 1));
+        break;
+      default:
+        setCounter((prevCount) => (prevCount -= 1));
+        break;
     }
-    
-}
-
-const cardVariants ={
-    single: {
-        scale: 1,
-    },
-    double: {
-        scale: 0.7
-    }
-}
+  };
+  return (
+    <motion.div
+      className={styles.page}
+      transition={{
+        delay: 0.5,
+        x: { type: "spring", stiffness: 75 },
+        default: { duration: 0.3 },
+      }}
+      onTap={onTap}
+      initial={{ rotateY: 0, zIndex: 0 }}
+      animate={{
+        rotateY: flipAngle,
+      }}
+    >
+      <div className={styles.face}></div>
+      <div className={`${styles.face} ${styles.backface}`}></div>
+    </motion.div>
+  );
+};
 const EditorCard = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [isSingle, setIsSingle] = useState(true);
+  const [counter, setCounter] = useState(0);
+  return (
+    <motion.div
+      className={`${styles.card}`}
+      variants={scaleVariants}
+      animate={counter === 0 ? "front" : counter === 1 ? "open" : "back"}
+      transition={{ type: "spring", stiffness: 100 }}
+    >
+      <Page setCounter={setCounter}></Page>
+      <Page setCounter={setCounter}></Page>
+    </motion.div>
+  );
+};
 
-    const handleOpen = () => {
-        setIsOpen(prevState => !prevState)
-        setIsSingle(prevState => !prevState)
-    }
-    return (
-        <motion.div className={`${styles.card} bg-white mt-16 relative`} variants={cardVariants} animate={isSingle ? 'single': 'double'}>  
-            <motion.div className={`${styles.frontCover} w-full h-full absolute top-0 left-0`} style={{originX: 0}} animate={isOpen ? "open" : "closed"} variants={variantsCover} onClick={handleOpen}>
-                <img src="/assets/images/card-cover2.png" className='w-full h-full' />
-                <motion.div className={`${styles.firstInside} absolute w-full flex-1 h-full bg-white top-0 left-0`} animate={isOpen ? "open" : "closed"} variants={variantsFirstInside}>
-                 First Page
-                </motion.div>
-            </motion.div>
-            
-        </motion.div>
-    )
-}
-
-export default EditorCard
+export default EditorCard;
