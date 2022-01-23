@@ -1,0 +1,13 @@
+.editorBtn {
+  font-size: 0.625rem;
+  font-weight: bold;
+}
+.editorBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.imgActive {
+  filter: invert(78%) sepia(42%) saturate(576%) hue-rotate(206deg)
+    brightness(88%) contrast(86%);
+}

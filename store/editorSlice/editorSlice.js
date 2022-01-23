@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tab: "Animations",
+  page: 0,
+  tab: 0,
 };
 
 export const editorSlice = createSlice({
@@ -11,9 +12,17 @@ export const editorSlice = createSlice({
     changeTab: (state, action) => {
       state.tab = action.payload;
     },
+    nextPage: (state) => {
+      state.page += 1;
+      state.tab = 0;
+    },
+    prevPage: (state) => {
+      state.page -= 1;
+      state.tab = 0;
+    },
   },
 });
 
-export const { changeTab } = editorSlice.actions;
+export const { changeTab, nextPage, prevPage } = editorSlice.actions;
 
 export default editorSlice.reducer;

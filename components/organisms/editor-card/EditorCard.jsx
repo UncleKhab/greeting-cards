@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./EditorCard.module.css";
 import { motion, useCycle } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { nextPage, prevPage } from "../../../store/editorSlice/editorSlice";
 
 const scaleVariants = {
   front: { x: 0 },
@@ -8,16 +10,16 @@ const scaleVariants = {
   back: { x: "100%" },
 };
 const Page = ({ setCounter }) => {
+  const dispatch = useDispatch();
   const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
   const onTap = () => {
     cycleFlipAngle();
-    console.log(flipAngle);
     switch (flipAngle) {
       case "0":
-        setCounter((prevCount) => (prevCount += 1));
+        dispatch(nextPage());
         break;
       default:
-        setCounter((prevCount) => (prevCount -= 1));
+        dispatch(prevPage());
         break;
     }
   };
@@ -41,16 +43,18 @@ const Page = ({ setCounter }) => {
   );
 };
 const EditorCard = () => {
-  const [counter, setCounter] = useState(0);
+  const { page } = useSelector((state) => state.editor);
+  console.log(page);
+
   return (
     <motion.div
       className={`${styles.card}`}
       variants={scaleVariants}
-      animate={counter === 0 ? "front" : counter === 1 ? "open" : "back"}
+      animate={page === 0 ? "front" : page === 1 ? "open" : "back"}
       transition={{ type: "spring", stiffness: 100 }}
     >
-      <Page setCounter={setCounter}></Page>
-      <Page setCounter={setCounter}></Page>
+      <Page></Page>
+      <Page></Page>
     </motion.div>
   );
 };

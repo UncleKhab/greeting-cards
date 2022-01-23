@@ -34,7 +34,7 @@ const EditorActions = () => {
     },
   ];
   return (
-    <div className={`${styles.wrapper} mb-4 flex justify-around gap-3`}>
+    <div className={`${styles.wrapper} mb-4 flex justify-around gap-5`}>
       {iconSet.map((item, index) => (
         <ActionButton {...item} key={index + "action-button"} />
       ))}

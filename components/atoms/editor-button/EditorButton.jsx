@@ -1,18 +1,23 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTab } from "../../../store/editorSlice/editorSlice";
-const EditorButton = ({ iconUrl, label }) => {
+import styles from "./EditorButton.module.css";
+
+const EditorButton = ({ iconUrl, label, index }) => {
   const dispatch = useDispatch();
   const currentState = useSelector((state) => state.editor);
   const { tab } = currentState;
   return (
     <button
-      className={`${
-        tab === label ? "text-black" : "text-white"
-      } flex flex-col justify-between items-center gap-2 font-semibold text-white text-sm`}
-      onClick={() => dispatch(changeTab(label))}
+      className={`${styles.editorBtn} ${
+        tab === index ? "text-black" : "text-white"
+      } flex flex-col justify-between items-center gap-1 flex-1`}
+      onClick={() => dispatch(changeTab(index))}
     >
-      <img src={iconUrl} />
+      <img
+        src={iconUrl}
+        className={`${tab === index ? styles.imgActive : ""}`}
+      />
       <p>{label}</p>
     </button>
   );
