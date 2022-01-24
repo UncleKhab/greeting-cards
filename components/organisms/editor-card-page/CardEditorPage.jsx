@@ -1,12 +1,10 @@
 import { nextPage, prevPage } from "../../../store/editorSlice/editorSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { motion, useCycle } from "framer-motion";
 import styles from "./CardEditorPage.module.css";
-import CardFrontCover from "../../molecules/card-front-cover/CardFrontCover";
 
-const CardEditorPage = () => {
+const CardEditorPage = ({ front, back }) => {
   const dispatch = useDispatch();
-  const { page } = useSelector((state) => state.editor);
   const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
   const onTap = () => {
     cycleFlipAngle();
@@ -33,8 +31,8 @@ const CardEditorPage = () => {
         rotateY: flipAngle,
       }}
     >
-      <div className={styles.face}>{page === 0 && <CardFrontCover />}</div>
-      <div className={`${styles.face} ${styles.backface}`}></div>
+      <div className={styles.face}>{front}</div>
+      <div className={`${styles.face} ${styles.backface}`}>{back}</div>
     </motion.div>
   );
 };
