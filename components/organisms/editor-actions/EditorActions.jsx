@@ -1,5 +1,5 @@
 import React from "react";
-import ActionButton from "../../atoms/action-button/ActionButton";
+import IconLabelButton from "../../atoms/icon-label-button/IconLabelButton";
 import styles from "./EditorActions.module.css";
 
 const EditorActions = () => {
@@ -36,7 +36,7 @@ const EditorActions = () => {
   return (
     <div className={`${styles.wrapper} mb-4 flex justify-around gap-5`}>
       {iconSet.map((item, index) => (
-        <ActionButton {...item} key={index + "action-button"} />
+        <IconLabelButton {...item} key={index + "action-button"} />
       ))}
     </div>
   );

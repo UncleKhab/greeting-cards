@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./ActionButton.module.css";
+import styles from "./IconLabelButton.module.css";
 
-const ActionButton = ({ iconSrc, label, action }) => {
+const IconLabelButton = ({ iconSrc, label, action }) => {
   return (
     <button
       className={`${styles.box} flex flex-col justify-center items-center flex-1 py-3`}
@@ -13,4 +13,4 @@ const ActionButton = ({ iconSrc, label, action }) => {
   );
 };
 
-export default ActionButton;
+export default IconLabelButton;

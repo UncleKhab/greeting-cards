@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTab } from "../../../store/editorSlice/editorSlice";
-import styles from "./EditorButton.module.css";
+import styles from "./EditorMenuButton.module.css";
 
-const EditorButton = ({ iconUrl, label, index }) => {
+const EditorMenuButton = ({ iconUrl, label, index }) => {
   const dispatch = useDispatch();
   const currentState = useSelector((state) => state.editor);
   const { tab } = currentState;
@@ -23,4 +23,4 @@ const EditorButton = ({ iconUrl, label, index }) => {
   );
 };
 
-export default EditorButton;
+export default EditorMenuButton;
