@@ -2,11 +2,8 @@ import React from "react";
 import styles from "./EditorCard.module.css";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import CardEditorPage from "../editor-card-page/CardEditorPage";
-import CardFrontCover from "../../molecules/card-front-cover/CardFrontCover";
-import CardFirstPage from "../../molecules/card-first-page/CardFirstPage";
-import CardSecondPage from "../../molecules/card-second-page/CardSecondPage";
-import CardBackCover from "../../molecules/card-back-cover/CardBackCover";
+import EditorCardBackPage from "../editor-card-pages/EditorCardBackPage";
+import EditorCardFrontPage from "../editor-card-pages/EditorCardFrontPage";
 
 const scaleVariants = {
   front: { x: 0 },
@@ -19,15 +16,12 @@ const EditorCard = () => {
     page === 0 ? "front" : page === 1 ? "open" : page === 2 ? "back" : "";
   console.log(animation);
   return (
-    <motion.div
-      className={`${styles.card}`}
-      variants={scaleVariants}
-      animate={animation}
-      transition={{ type: "spring", stiffness: 100 }}
-    >
-      <CardEditorPage front={<CardSecondPage />} back={<CardBackCover />} />
-      <CardEditorPage front={<CardFrontCover />} back={<CardFirstPage />} />
-    </motion.div>
+    <div>
+      <motion.div className={`${styles.card}`}>
+        <EditorCardBackPage page={page} />
+        <EditorCardFrontPage page={page} />
+      </motion.div>
+    </div>
   );
 };
 

@@ -1,9 +1,7 @@
 .card {
-  height: 55%;
-  width: 65%;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  grid-template-columns: 1fr 1fr;
-  position: absolute;
-  top: 10%;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin: auto;
+  overflow: visible;
 }
