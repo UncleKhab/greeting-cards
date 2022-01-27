@@ -1,10 +1,14 @@
-import { nextPage, prevPage } from "../../../store/editorSlice/editorSlice";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { nextPage, prevPage } from "../../../store/cardSlice/cardSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { motion, useCycle } from "framer-motion";
 import styles from "./CardEditorPage.module.css";
 
-const CardEditorPage = ({ front, back }) => {
+const CardEditorPage = ({ front, back, pos }) => {
+  const { pageIndex } = useSelector((state) => state.card);
   const dispatch = useDispatch();
+  const [zIndex, setZIndex] = useState(0);
+  const [display, setDisplay] = useState("unset");
   const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
   const onTap = () => {
     cycleFlipAngle();
@@ -17,6 +21,29 @@ const CardEditorPage = ({ front, back }) => {
         break;
     }
   };
+  useEffect(() => {
+    if (pageIndex === 0 && pos === 0) {
+      setZIndex(2);
+    }
+    if (pageIndex >= pos) {
+      setTimeout(() => {
+        setZIndex(2);
+      }, 800);
+    }
+    if (pageIndex !== pos) {
+      setTimeout(() => {
+        setZIndex(pos);
+      }, 800);
+    }
+    if (pageIndex > pos + 1) {
+      setTimeout(() => {
+        setDisplay("none");
+      }, 1500);
+    } else {
+      setDisplay("unset");
+    }
+  }, [pageIndex]);
+
   return (
     <motion.div
       className={styles.page}
@@ -25,8 +52,9 @@ const CardEditorPage = ({ front, back }) => {
         x: { type: "spring", stiffness: 75 },
         default: { duration: 0.3 },
       }}
+      style={{ zIndex: zIndex, display: display }}
       onTap={onTap}
-      initial={{ rotateY: 0, zIndex: 0 }}
+      initial={{ rotateY: 0 }}
       animate={{
         rotateY: flipAngle,
       }}

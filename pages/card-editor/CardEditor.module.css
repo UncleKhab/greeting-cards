@@ -1,3 +1,5 @@
 .wrapper {
-    background-color: #B9F1FD;
+  background-color: #b9f1fd;
+  height: 100vh;
+  max-width: 100%;
 }

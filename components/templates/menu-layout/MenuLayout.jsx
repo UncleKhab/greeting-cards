@@ -11,7 +11,6 @@ const MenuLayout = () => {
       className={`${styles.backdrop} fixed bottom-0 w-full flex flex-col justify-end items-center pt-6`}
     >
       <div className={styles.wrapper}>
-        {/* <h2 className="pb-2 text-xl font-bold text-gray-700">Animations</h2> */}
         <EditorActions />
         <EditActionBarComponent />
       </div>

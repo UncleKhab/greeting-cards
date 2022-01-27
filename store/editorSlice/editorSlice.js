@@ -12,17 +12,17 @@ export const editorSlice = createSlice({
     changeTab: (state, action) => {
       state.tab = action.payload;
     },
-    nextPage: (state) => {
-      state.page += 1;
-      state.tab = 0;
-    },
-    prevPage: (state) => {
-      state.page -= 1;
-      state.tab = 0;
-    },
+    // nextPage: (state) => {
+    //   state.page += 1;
+    //   state.tab = 0;
+    // },
+    // prevPage: (state) => {
+    //   state.page -= 1;
+    //   state.tab = 0;
+    // },
   },
 });
 
-export const { changeTab, nextPage, prevPage } = editorSlice.actions;
+export const { changeTab } = editorSlice.actions;
 
 export default editorSlice.reducer;
