@@ -21,7 +21,7 @@ const EditorCard = () => {
     <>
       <motion.div className={styles.dragArea} ref={constraintsRef}></motion.div>
       <motion.div
-        drag
+        drag={pageIndex === 0 || pageIndex === 2 ? false : true}
         dragConstraints={constraintsRef}
         className={`${styles.card}`}
         variants={wrapperVariants}
