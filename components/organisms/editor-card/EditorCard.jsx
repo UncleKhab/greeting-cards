@@ -9,7 +9,7 @@ import CardBackCover from "../../molecules/card-back-cover/CardBackCover";
 import { useSelector } from "react-redux";
 const wrapperVariants = {
   initial: { x: "0" },
-  open: { x: "85%", scale: 0.9 },
+  open: { x: "0%", scale: 0.9 },
   lastPage: { x: "90%" },
 };
 
