@@ -6,20 +6,23 @@ import styles from "./CardEditorPage.module.css";
 
 const CardEditorPage = ({ front, back, pos }) => {
   const { pageIndex } = useSelector((state) => state.card);
+  const { isEditorOpen } = useSelector((state) => state.editor);
   const dispatch = useDispatch();
   const [zIndex, setZIndex] = useState(0);
   const [display, setDisplay] = useState("unset");
   const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
   const handleNext = (e) => {
     console.log(flipAngle);
-    cycleFlipAngle();
-    switch (flipAngle) {
-      case "0":
-        dispatch(nextPage());
-        break;
-      default:
-        dispatch(prevPage());
-        break;
+    if (!isEditorOpen) {
+      cycleFlipAngle();
+      switch (flipAngle) {
+        case "0":
+          dispatch(nextPage());
+          break;
+        default:
+          dispatch(prevPage());
+          break;
+      }
     }
   };
   useEffect(() => {

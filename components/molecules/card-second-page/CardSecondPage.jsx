@@ -1,7 +1,7 @@
 import React from "react";
 
 const CardSecondPage = () => {
-  return <div className="w-full h-full">CARD SECOND PAGE</div>;
+  return <div className="w-full h-full"></div>;
 };
 
 export default CardSecondPage;

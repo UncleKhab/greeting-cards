@@ -1,3 +1,51 @@
 .page {
-  background-color: green;
+  background-color: rgb(252, 251, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.borderOne {
+  height: 98%;
+  width: 94%;
+  border: 1px solid black;
+  position: absolute;
+}
+
+.borderTwo {
+  height: 96%;
+  width: 97%;
+  border: 1px solid black;
+  position: absolute;
+}
+
+.contentBox {
+  width: 70%;
+  text-align: center;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textAreaWrapper {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textArea {
+  border: 1px solid #00000059;
+  min-height: 30%;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 10;
+}
+.watermark {
+  display: flex;
+  justify-content: center;
+}
+
+.watermarkImage {
+  width: 60%;
 }

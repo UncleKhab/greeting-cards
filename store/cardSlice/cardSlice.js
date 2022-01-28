@@ -5,6 +5,9 @@ const initialState = {
   isOpen: false,
   frontPage: {
     imageUrl: "",
+    animation: "",
+    theme: "",
+    backgroundColor: "",
   },
 };
 

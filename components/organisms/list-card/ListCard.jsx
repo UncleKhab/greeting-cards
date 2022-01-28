@@ -15,7 +15,11 @@ const ListCard = ({ imgSource }) => {
     <div onClick={handleClick}>
       <div className="flex flex-col justify-center items-center z-10">
         <div className={`${styles.imageBox} w-fit z-20 flex justify-center`}>
-          <img src={imgSource} alt="img-greeting-cover" />
+          <img
+            src={imgSource}
+            alt="img-greeting-cover"
+            className={styles.image}
+          />
         </div>
         <div className="bg-white p-4 pt-10 z-10 relative -top-10  m-2">
           <h3 className="text-xs font-bold text-slate-800">

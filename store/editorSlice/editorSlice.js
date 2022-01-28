@@ -1,28 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  page: 0,
-  tab: 0,
+  isEditorOpen: false,
 };
 
 export const editorSlice = createSlice({
   name: "editor",
   initialState,
   reducers: {
-    changeTab: (state, action) => {
-      state.tab = action.payload;
+    toggleEditor: (state) => {
+      state.isEditorOpen = !state.isEditorOpen;
     },
-    // nextPage: (state) => {
-    //   state.page += 1;
-    //   state.tab = 0;
-    // },
-    // prevPage: (state) => {
-    //   state.page -= 1;
-    //   state.tab = 0;
-    // },
   },
 });
 
-export const { changeTab } = editorSlice.actions;
+export const { toggleEditor } = editorSlice.actions;
 
 export default editorSlice.reducer;

@@ -6,7 +6,7 @@ const CardEditorPage = () => {
   return (
     <div className={`${styles.wrapper}`}>
       <MenuBar />
-      <div className="h-full bg-gray-100 overflow-hidden">
+      <div className="h-full overflow-hidden">
         <EditorCard />
       </div>
       <MenuLayout />
