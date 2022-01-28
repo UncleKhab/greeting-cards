@@ -1,9 +1,19 @@
 .backdrop {
-    background: #f9feffce;
-    border-radius: 10px 10px 0 0;
-    box-shadow: -1px -4px 11px 0px #68686852;
+  background: #f9feffce;
+  border-radius: 10px 10px 0 0;
+  box-shadow: -1px -4px 11px 0px #68686852;
 }
 
 .wrapper {
-    width: 90%;
+  width: 90%;
+}
+
+.toggler {
+  position: absolute;
+  width: 20%;
+  height: 5px;
+  background-color: #f3f4f6;
+  border-radius: 50px;
+  top: 10px;
+  box-shadow: inset 0px 1px 2px 0px #0000006b;
 }

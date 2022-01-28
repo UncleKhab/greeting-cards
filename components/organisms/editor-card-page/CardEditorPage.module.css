@@ -5,17 +5,17 @@
   transform-style: preserve-3d;
   transition: transform 1s;
   transform-origin: 0;
-  background-color: tomato;
+  box-shadow: 6px 3px 5px #00000029;
 }
 .face {
-  background-color: red;
   background-size: cover;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
   position: absolute;
+  background-color: #fefefe;
 }
 .backface {
-  background-color: violet;
   transform: rotateY(180deg);
+  background-color: #e7e7e7;
 }

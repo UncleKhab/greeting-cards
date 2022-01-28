@@ -10,7 +10,8 @@ const CardEditorPage = ({ front, back, pos }) => {
   const [zIndex, setZIndex] = useState(0);
   const [display, setDisplay] = useState("unset");
   const [flipAngle, cycleFlipAngle] = useCycle("0", "-180deg");
-  const onTap = () => {
+  const handleNext = (e) => {
+    console.log(flipAngle);
     cycleFlipAngle();
     switch (flipAngle) {
       case "0":
@@ -45,23 +46,25 @@ const CardEditorPage = ({ front, back, pos }) => {
   }, [pageIndex]);
 
   return (
-    <motion.div
-      className={styles.page}
-      transition={{
-        delay: 0.5,
-        x: { type: "spring", stiffness: 75 },
-        default: { duration: 0.3 },
-      }}
-      style={{ zIndex: zIndex, display: display }}
-      onTap={onTap}
-      initial={{ rotateY: 0 }}
-      animate={{
-        rotateY: flipAngle,
-      }}
-    >
-      <div className={styles.face}>{front}</div>
-      <div className={`${styles.face} ${styles.backface}`}>{back}</div>
-    </motion.div>
+    <>
+      <motion.div
+        className={styles.page}
+        transition={{
+          delay: 0.5,
+          x: { type: "spring", stiffness: 75 },
+          default: { duration: 0.3 },
+        }}
+        onTap={handleNext}
+        style={{ zIndex: zIndex, display: display }}
+        initial={{ rotateY: 0 }}
+        animate={{
+          rotateY: flipAngle,
+        }}
+      >
+        <div className={styles.face}>{front}</div>
+        <div className={`${styles.face} ${styles.backface}`}>{back}</div>
+      </motion.div>
+    </>
   );
 };
 

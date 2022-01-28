@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 import { actionButtonsList } from "./buttonsList";
 
 const EditActionBarComponent = () => {
-  const { page } = useSelector((state) => state.editor);
+  const { pageIndex } = useSelector((state) => state.card);
 
   return (
     <div className={`${styles.wrapper} flex justify-around mb-6`}>
-      {actionButtonsList[page].map((item, index) => (
+      {actionButtonsList[pageIndex].map((item, index) => (
         <EditorMenuButton
           {...item}
           index={index}

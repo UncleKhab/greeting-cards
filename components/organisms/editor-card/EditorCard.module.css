@@ -8,3 +8,9 @@
   align-items: center;
   position: aboslute;
 }
+.dragArea {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 180%;
+}
