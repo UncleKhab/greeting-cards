@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./EditorActionBar.module.css";
+import styles from "./EditTabs.module.css";
 import EditorMenuButton from "../../atoms/editor-menu-button/EditorMenuButton";
 import { useSelector } from "react-redux";
 import { actionButtonsList } from "./buttonsList";
 
-const EditActionBarComponent = () => {
+const EditTabsComponent = () => {
   const { pageIndex } = useSelector((state) => state.card);
 
   return (
@@ -20,4 +20,4 @@ const EditActionBarComponent = () => {
   );
 };
 
-export default EditActionBarComponent;
+export default EditTabsComponent;

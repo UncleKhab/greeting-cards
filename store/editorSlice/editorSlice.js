@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isEditorOpen: false,
+  tab: 0,
 };
 
 export const editorSlice = createSlice({
@@ -11,9 +12,12 @@ export const editorSlice = createSlice({
     toggleEditor: (state) => {
       state.isEditorOpen = !state.isEditorOpen;
     },
+    changeTab: (state, action) => {
+      state.tab = action.payload;
+    },
   },
 });
 
-export const { toggleEditor } = editorSlice.actions;
+export const { toggleEditor, changeTab } = editorSlice.actions;
 
 export default editorSlice.reducer;

@@ -6,7 +6,7 @@ const CircularButton = ({ onClick, icon }) => {
       onClick={onClick}
       className="bg-white rounded-full p-3 shadow-md shadow-gray-200 "
     >
-      {icon}
+      <div>{icon}</div>
     </button>
   );
 };

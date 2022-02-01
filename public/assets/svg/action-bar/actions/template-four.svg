@@ -1,0 +1,41 @@
+<svg width="95" height="73" viewBox="0 0 95 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_163_171)">
+<path d="M47.3218 0L3.99996 7.57711e-06V65H47.3218V0Z" fill="white"/>
+<path d="M47.3218 0H90.6436V65H47.3218V0Z" fill="#F3F3F3"/>
+<rect x="12" y="18" width="28.5947" height="4.19328" fill="#C4C4C4"/>
+<rect x="12" y="26" width="27.1229" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="27.9863" width="22.9178" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="29.9722" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="31.959" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="33.9453" width="27.1229" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="35.9316" width="22.9178" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="37.9175" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="12" y="39.9043" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="18" width="27.1229" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="19.9863" width="22.9178" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="21.9722" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="23.959" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="25.9453" width="27.1229" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="27.9316" width="22.9178" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="29.9175" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="31.9043" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="37.9722" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="39.959" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="41.9453" width="27.1229" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="43.9316" width="22.9178" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="45.9175" width="26.0716" height="1.3242" fill="#C4C4C4"/>
+<rect x="55" y="47.9043" width="28.5947" height="1.3242" fill="#C4C4C4"/>
+</g>
+<defs>
+<filter id="filter0_d_163_171" x="0" y="0" width="94.6436" height="73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_163_171"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_163_171" result="shape"/>
+</filter>
+</defs>
+</svg>

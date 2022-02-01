@@ -9,11 +9,7 @@
 }
 
 .toggler {
-  position: absolute;
-  width: 20%;
-  height: 5px;
-  background-color: #f3f4f6;
-  border-radius: 50px;
-  top: 10px;
-  box-shadow: inset 0px 1px 2px 0px #0000006b;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 11px 0px #68686852;
+  color: rgb(255, 120, 90);
 }
